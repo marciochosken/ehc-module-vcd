@@ -2,7 +2,7 @@ terraform {
   required_providers {
     vcd = {
       source = "vmware/vcd"
-      version = "3.4.0"
+      version = "3.5"
     }
   }
 }
@@ -22,6 +22,10 @@ variable "NETWORK_NAME" {
 variable "METADATA" {
   type = map
   default = {}
+}
+
+variable "FORCE_CUSTOMIZATION" {
+  default = false
 }
 
 variable "VAPP_VM_NAME" {}

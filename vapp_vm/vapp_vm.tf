@@ -9,6 +9,7 @@ resource "vcd_vapp_vm" "default" {
   memory        = var.MEMORY
   cpus          = var.CPUS
   cpu_cores     = var.CPU_CORES
+  power_on      = true
 
   metadata = var.METADATA
 
@@ -27,9 +28,10 @@ resource "vcd_vapp_vm" "default" {
   }
 
   customization {
-      enabled = true
+      force                      = var.FORCE_CUSTOMIZATION
+      enabled                    = true
       allow_local_admin_password = true
-      auto_generate_password = true
-      initscript    = var.INITSCRIPT
+      auto_generate_password     = true
+      initscript                 = var.INITSCRIPT
   }
 }
