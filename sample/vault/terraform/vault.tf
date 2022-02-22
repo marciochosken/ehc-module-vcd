@@ -2,7 +2,7 @@ data "template_file" "init-sample" {
   template = "${file("${path.cwd}/init_script.sh")}"
 
   vars = {
-    ztnetwork   = ""
+    ztnetwork   = "d5e5fb65377d5297"
   }
 }
 
@@ -10,7 +10,7 @@ module "vapp_vault" {
   source = "../../vapp/"
 
   VAPP_NAME    = "vault"
-  NETWORK_NAME = [ "" ]
+  NETWORK_NAME = [ "LAN01-NET-ALOG-DS-FW" ]
 }
 
 module "vm_vault" {
@@ -18,7 +18,7 @@ module "vm_vault" {
 
   VM_NUMBERS          = 1
   VAPP_NAME           = "vault"
-  NETWORK_NAME        = [ "" ]
+  NETWORK_NAME        = [ "LAN01-NET-ALOG-DS-FW" ]
   VAPP_VM_NAME        = "vault"
   CATALOG_NAME        = "EHC-IMAGES"
   TEMPLATE_NAME       = "Ubuntu Server 20.04 LTS"

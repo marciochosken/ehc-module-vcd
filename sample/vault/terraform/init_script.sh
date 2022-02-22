@@ -5,6 +5,6 @@ curl -s 'https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/conta
 if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
 zerotier-cli join ${ztnetwork}
 export VAULT_SKIP_VERIFY=true
-export VAULT_INIT_ARGS='-root-token-pgp-key=keybase:hashcorp'
+export VAULT_INIT_ARGS='-root-token-pgp-key=keybase:marciohosken'
 wget https://raw.githubusercontent.com/marciochosken/hashicorp-vault-install/main/vault-install.sh
 bash -x ./vault-install.sh
